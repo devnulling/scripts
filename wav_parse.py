@@ -3,8 +3,9 @@ total = 0
 zeros = 0
 notzeros = 0
 
-os.system("mkdir -p empty")
 os.system("mkdir -p good")
+os.system("mkdir -p bad")
+os.system("mkdir -p ugly")
 
 def ckbyte(b):
 	global total, zeros, notzeros
@@ -21,10 +22,13 @@ def show(yo):
 	zper = float(zeros)/float(total) * 100
 	print "%s: %s" % (yo, zper)
 	if zper > 98.0:
-		cmd = "mv -v " + yo + " empty/"
+		cmd = "mv -v " + yo + " bad/"
 		os.system(cmd)
 	elif zper < 30.0:
 		cmd = "mv -v " + yo + " good/"
+		os.system(cmd)
+	else:
+		cmd = "mv -v " + yo + " ugly/"
 		os.system(cmd)
 
 def runfile(yo):
