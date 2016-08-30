@@ -1,0 +1,3 @@
+tail -f output.bits | nc 10.1.1.150 8501
+
+nc -l -p 8501 | /usr/bin/python /home/user/iridium-toolkit/iridium-parser.py - - | /usr/bin/python /home/user/vocs/splitter.py 
