@@ -9,7 +9,8 @@ if grep -q "On Apple only" "$FILE"; then
 	cd build
 	echo `pwd`
 	echo "Running CMake"
-	cmake -DCMAKE_INSTALL_PREFIX=/opt/local -DPYTHON_EXECUTABLE=/opt/local/bin/python2.7 -DPYTHON_INCLUDE_DIR=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/Headers -DPYTHON_LIBRARY=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/Python ../
+	cmake -DCMAKE_INSTALL_PREFIX=/opt/local -DPYTHON_EXECUTABLE=/opt/local/bin/python2.7 -DPYTHON_INCLUDE_DIR=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/Headers -DPYTHON_LIBRARY=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/Python -DGR_PYTHON_DIR=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages ../
+
 	echo "Building..."
 	make
 	echo "Installing..."
