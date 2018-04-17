@@ -141,7 +141,7 @@ write_oot_builder(){
 	echo "SDR_INSTALL_BASE=\"$SDR_INSTALL_BASE\"" >> $SDR_OOT_BUILDER_FILE
 	echo "SDR_CMAKE_COMMAND=\"cmake -DCMAKE_INSTALL_PREFIX=\$SDR_INSTALL_BASE -DUHD_DIR=\$SDR_INSTALL_BASE/lib/cmake/uhd/ -DUHD_INCLUDE_DIRS=\$SDR_INSTALL_BASE/include/ -DUHD_LIBRARIES=\$SDR_INSTALL_BASE/lib/libuhd.so ../\"" >> $SDR_OOT_BUILDER_FILE
 	echo "cd \$SDR_INSTALL_BASE" >> $SDR_OOT_BUILDER_FILE
-	echo "source ./setup.env" >> $SDR_OOT_BUILDER_FILE
+	echo "source ./\$SDR_OOT_DIR/setup.env" >> $SDR_OOT_BUILDER_FILE
 	echo "cd \$1" >> $SDR_OOT_BUILDER_FILE
 	echo "mkdir build" >> $SDR_OOT_BUILDER_FILE
 	echo "cd build" >> $SDR_OOT_BUILDER_FILE
