@@ -55,18 +55,21 @@ wl2 = float(wl/2)
 wl4 = float(wl/4)
 
 
-ula = wl * args.spacing
-uca = (wl * args.spacing) / math.sqrt(2)
-
+interelement_spacing = wl * args.spacing
+array_radius = (wl * args.spacing) / math.sqrt(2)
+array_diameter = array_radius * 2
 
 print("--------------------")
 print("Frequency: %s" % args.freq)
-print("Wavelength (%s): %.2f" % (output_format, wl))
-print("Half Wavelength (%s): %.2f" % (output_format, wl2))
-print("Quarter Wavelength (%s): %.2f" % (output_format, wl4))
+print("Spacing Factor: %s" % args.spacing)
+print("Wavelength (%s): %.4f" % (output_format, wl))
+print("Half Wavelength (%s): %.4f" % (output_format, wl2))
+print("Quarter Wavelength (%s): %.4f" % (output_format, wl4))
 
 print("--------------------")
-print("Spacing Factor (%s): %.2f" % (output_format, args.spacing))
-print("ULA Spacing (%s): %.2f" % ( output_format, ula))
-print("UCA Spacing (%s): %.2f" % ( output_format, uca))
+print("ULA Spacing (%s): %.4f" % ( output_format, interelement_spacing))
+print("--------------------")
+print("UCA Diamter (%s): %.4f" % ( output_format, array_diameter))
+print("UCA Radius (%s): %.4f" % ( output_format, array_radius))
+print("UCA inter-element Spacing (%s): %.4f" % ( output_format, interelement_spacing))
 print("--------------------")
